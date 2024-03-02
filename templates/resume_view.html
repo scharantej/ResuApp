@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume</title>
+</head>
+<body>
+<h1>{{ resume_data.name }}</h1>
+<p>{{ resume_data.contact_info }}</p>
+
+<h2>Education</h2>
+<ul>
+{% for education in resume_data.education %}
+<li>{{ education.degree }} from {{ education.institution }} ({{ education.start_date }} - {{ education.end_date }})</li>
+{% endfor %}
+</ul>
+
+<h2>Skills</h2>
+<ul>
+{% for skill in resume_data.skills %}
+<li>{{ skill }}</li>
+{% endfor %}
+</ul>
+
+<h2>Experience</h2>
+<ul>
+{% for experience in resume_data.experience %}
+<li>{{ experience.position }} at {{ experience.company }} ({{ experience.start_date }} - {{ experience.end_date }})</li>
+{% endfor %}
+</ul>
+</body>
+</html>
+
